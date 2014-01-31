@@ -1,0 +1,13 @@
+body {
+  background-color: #363c57;
+}
+
+#music {
+  width: 500px;
+  margin: 20px auto;
+}
+
+line {
+  stroke-width: 2;
+  stroke: #494E6B;
+}

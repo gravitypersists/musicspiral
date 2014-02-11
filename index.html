@@ -4,6 +4,44 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+  <div class="note">
+    You can start by playing keys on your keyboard ("A" is the note C, "W" is the note C#, etc.). It's a bit buggy with a computer keyboard, as it was made with a real midi device in mind. Sound synthesis created by using <a href="https://github.com/mudcube/MIDI.js/issues/3">MIDI.js</a>, midi interaction via <a href="https://github.com/abudaan/midibridge">midibridge</a>.
+  </div>
+  <ul class="controls">
+    <li>
+      <div class="select_container">
+        <div class="down-caret"></div>
+        <select id="key" onchange="onSelectChange()">
+          <option value=0 selected="selected">C</option>
+          <option value=1>C#</option>
+          <option value=2>D</option>
+          <option value=3>D#</option>
+          <option value=4>E</option>
+          <option value=5>F</option>
+          <option value=6>F#</option>
+          <option value=7>G</option>
+          <option value=8>G#</option>
+          <option value=9>A</option>
+          <option value=10>A#</option>
+          <option value=11>B</option>
+        </select>
+        
+      </div>
+
+      <div class="select_container">
+        <select id="scale" onchange="onSelectChange()">
+          <option value="WWHWWWH" selected="selected">major</option>
+          <option value="WHWWHWW">minor (natural)</option>
+          <option value="WHWWWWH">minor (melodic)</option>
+        </select>
+        <div class="down-caret"></div>
+      </div>
+    </li>
+
+    <li><a id="play_button" onclick="onPlayClick()">Play Moonlight Sonata</a></li>
+    <li id="midi_status"><a id="midi_button" onclick="loadMidibridge()">Connect a midi controller</a></li>
+  </ul>
+
   <div id="music"></div>
 
   <script type="text/javascript" src="lib/MIDIBridge.js"></script>

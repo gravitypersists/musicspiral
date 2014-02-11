@@ -1,8 +1,79 @@
 body {
   background-color: #363c57;
+  color: #9ea2b8;
 }
 
 #music {
   width: 500px;
   margin: 20px auto;
+}
+
+.note {
+  position: absolute;
+  width: 400px;
+  bottom: 0px;
+}
+
+.note a {
+  color: #9ea2b8;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.controls {
+  list-style-type: none;
+  margin: 10px;
+  padding: 0px;
+  float: left;
+}
+
+.controls li {
+  margin: 15px 0px;
+  font-family: sans-serif;
+}
+
+.controls a {
+  padding: 4px 8px;
+  background-color: #494E6B;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.controls a:hover {
+  background-color: #636677;
+}
+
+.select_container {
+  display: inline;
+  border: 2px solid;
+  border-radius: 3px;
+  border-color: #9ea2b8;
+  position: relative;
+  cursor: pointer;
+  margin-right: 5px;
+  padding: 2px;
+}
+
+.down-caret {
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #9ea2b8;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+
+select {
+  background: transparent;
+  padding: 5px;
+  padding-right: 20px;
+  font-size: 16px;
+  border: 2px;
+  height: 34px;
+  outline: none;
+  color: #9ea2b8;
+  -webkit-appearance: none;
+  cursor: pointer;
 }

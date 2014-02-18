@@ -7,4 +7,4 @@ A midi-controllable music visualization that presents notes being played on a sp
 
 To run, open index.html
 
- Sound synthesis created by using [MIDI.js](https://github.com/mudcube/MIDI.js/issues/3), midi interaction via [midibridge](https://github.com/abudaan/midibridge).
+ Sound synthesized by using [MIDI.js](https://github.com/mudcube/MIDI.js/issues/3), midi interaction via [midibridge](https://github.com/abudaan/midibridge).

@@ -12,14 +12,14 @@ window.loadMidibridge = ->
   statusEl.innerHTML = "Accept Java Permissions"
   midiBridge.init (midiAccess) ->
     input = midiAccess.getInput(midiAccess.enumerateInputs()[0])
-    
+
     if input
       statusEl.innerHTML = "Using #{input.deviceName}"
     else
       statusEl.innerHTML = "No midi device found"
       return
-    
-    input.addEventListener "midiMessage", (e) -> 
+
+    input.addEventListener "midiMessage", (e) ->
       if e.command is 144 # Note ON
         music.press(e.data1) # data1 = Key
       else if e.command is 128 # Note OFF
@@ -47,7 +47,7 @@ MIDI.loadPlugin ->
       music.press data.note
     else if data.message is 128
       music.unpress data.note
-  
+
   window.onkeydown = (key) ->
     note = keyCodesAtoL.indexOf(key.keyCode)
     if note > -1
@@ -60,11 +60,11 @@ MIDI.loadPlugin ->
       MIDI.noteOff 0, 60+note, 127, 0
       music.unpress 60+note
 
-  window.onPlayClick = ->
+  document.querySelector('#play_button').addEventListener 'click', (e) ->
     document.getElementById("key").value = 1
     document.getElementById("scale").value = "WHWWHWW"
     window.onSelectChange()
     document.getElementById("play_button").style.display = "none"
     document.getElementById("midi_status").innerHTML = "Playing Moonlight Sonata by Beethoven"
     player.start()
-    
+
